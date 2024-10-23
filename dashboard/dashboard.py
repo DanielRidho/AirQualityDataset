@@ -4,12 +4,11 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 import numpy as np
 from scipy import stats
-import os
 
 
 @st.cache_data
 def load_data():
-    df = pd.read_csv(os.path.join(os.getcwd(), 'clean_merged_dataset.csv'))
+    df = pd.read_csv("../dashboard/clean_merged_dataset.csv")
     df_Aotizhongxin = pd.read_csv(
         "../data/PRSA_Data_Aotizhongxin_20130301-20170228.csv"
     )
