@@ -10,43 +10,43 @@ import os
 @st.cache_data
 def load_data():
     os.chdir("../dashboard")
-    df = pd.read_csv("clean_merged_dataset.csv")
+    df = pd.read_csv("dashboard/clean_merged_dataset.csv")
     
     df_Aotizhongxin = pd.read_csv(
-        "../data/PRSA_Data_Aotizhongxin_20130301-20170228.csv"
+        "data/PRSA_Data_Aotizhongxin_20130301-20170228.csv"
     )
     df_Changping = pd.read_csv(
-        "../data/PRSA_Data_Changping_20130301-20170228.csv"
+        "data/PRSA_Data_Changping_20130301-20170228.csv"
     )
     df_Dingling = pd.read_csv(
-        "../data/PRSA_Data_Dingling_20130301-20170228.csv"
+        "data/PRSA_Data_Dingling_20130301-20170228.csv"
     )
     df_Dongsi = pd.read_csv(
-        "../data/PRSA_Data_Dongsi_20130301-20170228.csv"
+        "data/PRSA_Data_Dongsi_20130301-20170228.csv"
     )
     df_Guanyuan = pd.read_csv(
-        "../data/PRSA_Data_Guanyuan_20130301-20170228.csv"
+        "data/PRSA_Data_Guanyuan_20130301-20170228.csv"
     )
     df_Gucheng = pd.read_csv(
-        "../data/PRSA_Data_Gucheng_20130301-20170228.csv"
+        "data/PRSA_Data_Gucheng_20130301-20170228.csv"
     )
     df_Huairou = pd.read_csv(
-        "../data/PRSA_Data_Huairou_20130301-20170228.csv"
+        "data/PRSA_Data_Huairou_20130301-20170228.csv"
     )
     df_Nongzhanguan = pd.read_csv(
-        "../data/PRSA_Data_Nongzhanguan_20130301-20170228.csv"
+        "data/PRSA_Data_Nongzhanguan_20130301-20170228.csv"
     )
     df_Shunyi = pd.read_csv(
-        "../data/PRSA_Data_Shunyi_20130301-20170228.csv"
+        "data/PRSA_Data_Shunyi_20130301-20170228.csv"
     )
     df_Tiantan = pd.read_csv(
-        "../data/PRSA_Data_Tiantan_20130301-20170228.csv"
+        "data/PRSA_Data_Tiantan_20130301-20170228.csv"
     )
     df_Wanliu = pd.read_csv(
-        "../data/PRSA_Data_Wanliu_20130301-20170228.csv"
+        "data/PRSA_Data_Wanliu_20130301-20170228.csv"
     )
     df_Wanshouxigong = pd.read_csv(
-        "../data/PRSA_Data_Wanshouxigong_20130301-20170228.csv"
+        "data/PRSA_Data_Wanshouxigong_20130301-20170228.csv"
     )
 
     df["date_time"] = pd.to_datetime(df["date_time"])
