@@ -1,19 +1,48 @@
-# 🎈 Blank app template
+# Belajar Analisis Data dengan Python
+Proyek ini bertujuan untuk membuat dashboard interaktif yang menganalisis dan memvisualisasikan data kualitas udara yang memungkinkan pengguna untuk mengeksplorasi tren dan pola pencemaran dengan mudah
 
-A simple Streamlit app template for you to modify!
+# Noted
+This repository only use to deploy [Streamlit.app](https://dicoding-airquality-annas-sovianto.streamlit.app/)
 
-[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://blank-app-template.streamlit.app/)
+If you run in your pc, you should change the directory of read.csv(data)
 
-### How to run it on your own machine
+The zip file that I sent in the Dicoding project submission is code that can be run on a local computer.
 
-1. Install the requirements
+# Dataset
+Find the Air Quality Dataset in [Air Quality Dataset](https://github.com/marceloreis/HTI/tree/master)
+
+## Setup environment
+
+- Install Visual Studio Code for Better Code Editor
+- Execute this command on command line (as administrator prefered)
+
+```
+pip install numpy pandas scipy matplotlib seaborn jupyter
+```
+
+## Project installation
+
+The steps to create your virtual environment from this project is as follows:
+
+1. Clone this repository
 
    ```
-   $ pip install -r requirements.txt
+   git clone https://github.com/anndeviant/analisis-data_airquality.git
    ```
 
-2. Run the app
-
+2. Move to directory dicoding-airquality/
    ```
-   $ streamlit run streamlit_app.py
+   cd analisis-data_airquality
+   ```
+3. Move to directory dashboard/
+   ```
+   cd dashboard
+   ```
+5. Run streamlit app
+   ```
+   streamlit run dashboard.py
+   ```
+6. Stop the application in terminal by
+   ```
+   ctrl + c
    ```
