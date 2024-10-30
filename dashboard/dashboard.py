@@ -8,37 +8,63 @@ from scipy import stats
 
 @st.cache_data
 def load_data():
-    # Load all dataframes
     df = pd.read_csv("dashboard/clean_merged_dataset.csv")
-    
-    # List of all station data files
-    station_files = [
-        "data/PRSA_Data_Aotizhongxin_20130301-20170228.csv",
-        "data/PRSA_Data_Changping_20130301-20170228.csv",
-        "data/PRSA_Data_Dingling_20130301-20170228.csv",
-        "data/PRSA_Data_Dongsi_20130301-20170228.csv",
-        "data/PRSA_Data_Guanyuan_20130301-20170228.csv",
-        "data/PRSA_Data_Gucheng_20130301-20170228.csv",
-        "data/PRSA_Data_Huairou_20130301-20170228.csv",
-        "data/PRSA_Data_Nongzhanguan_20130301-20170228.csv",
-        "data/PRSA_Data_Shunyi_20130301-20170228.csv",
-        "data/PRSA_Data_Tiantan_20130301-20170228.csv",
-        "data/PRSA_Data_Wanliu_20130301-20170228.csv",
-        "data/PRSA_Data_Wanshouxigong_20130301-20170228.csv",
-    ]
-    
-    # Load each station data and convert date_time
-    station_dfs = []
-    for file in station_files:
-        df_station = pd.read_csv(file)
-        if 'date_time' in df_station.columns:
-            df_station['date_time'] = pd.to_datetime(df_station['date_time'], errors='coerce')
-        station_dfs.append(df_station)
-    
-    # Convert main df date_time
-    df['date_time'] = pd.to_datetime(df['date_time'], errors='coerce')
 
-    return (df, *station_dfs)
+    df_Aotizhongxin = pd.read_csv(
+        "data/PRSA_Data_Aotizhongxin_20130301-20170228.csv"
+    )
+    df_Changping = pd.read_csv(
+        "data/PRSA_Data_Changping_20130301-20170228.csv"
+    )
+    df_Dingling = pd.read_csv(
+        "data/PRSA_Data_Dingling_20130301-20170228.csv"
+    )
+    df_Dongsi = pd.read_csv(
+        "data/PRSA_Data_Dongsi_20130301-20170228.csv"
+    )
+    df_Guanyuan = pd.read_csv(
+        "data/PRSA_Data_Guanyuan_20130301-20170228.csv"
+    )
+    df_Gucheng = pd.read_csv(
+        "data/PRSA_Data_Gucheng_20130301-20170228.csv"
+    )
+    df_Huairou = pd.read_csv(
+        "data/PRSA_Data_Huairou_20130301-20170228.csv"
+    )
+    df_Nongzhanguan = pd.read_csv(
+        "data/PRSA_Data_Nongzhanguan_20130301-20170228.csv"
+    )
+    df_Shunyi = pd.read_csv(
+        "data/PRSA_Data_Shunyi_20130301-20170228.csv"
+    )
+    df_Tiantan = pd.read_csv(
+        "data/PRSA_Data_Tiantan_20130301-20170228.csv"
+    )
+    df_Wanliu = pd.read_csv(
+        "data/PRSA_Data_Wanliu_20130301-20170228.csv"
+    )
+    df_Wanshouxigong = pd.read_csv(
+        "data/PRSA_Data_Wanshouxigong_20130301-20170228.csv"
+    )
+
+    #df["date_time"] = pd.to_datetime(df["date_time"])
+    df["date_time"] = pd.to_datetime(df["date_time"])
+
+    return (
+        df,
+        df_Aotizhongxin,
+        df_Changping,
+        df_Dingling,
+        df_Dongsi,
+        df_Guanyuan,
+        df_Gucheng,
+        df_Huairou,
+        df_Nongzhanguan,
+        df_Shunyi,
+        df_Tiantan,
+        df_Wanliu,
+        df_Wanshouxigong,
+    )
 
 
 (
@@ -56,6 +82,7 @@ def load_data():
     df_Wanliu,
     df_Wanshouxigong,
 ) = load_data()
+
 
 st.sidebar.image("dashboard/pic.png")
 st.sidebar.title("Air Quality Dataset")
@@ -136,8 +163,7 @@ elif menu == "Pertanyaan 1":
     )
 
     # Mengonversi kolom date_time menjadi datetime
-    #df["date_time"] = pd.to_datetime(df["date_time"])
-    df['date_time'] = pd.to_datetime(df['date_time'], errors='coerce')
+    df["date_time"] = pd.to_datetime(df["date_time"])
 
     # Membuat plot
     yearly_co = df.groupby('year')['CO'].mean().reset_index()
@@ -185,8 +211,7 @@ elif menu == "Pertanyaan 2":
     )
 
     # Mengonversi kolom date_time menjadi datetime
-    # df["date_time"] = pd.to_datetime(df["date_time"])
-    df['date_time'] = pd.to_datetime(df['date_time'], errors='coerce')
+    df["date_time"] = pd.to_datetime(df["date_time"])
     
     # Membuat scatter plot
     fig, ax = plt.subplots(figsize=(10, 6))
@@ -225,8 +250,7 @@ elif menu == "Pertanyaan 3":
     )
 
     # Mengonversi kolom date_time menjadi datetime
-    #df["date_time"] = pd.to_datetime(df["date_time"])
-    df['date_time'] = pd.to_datetime(df['date_time'], errors='coerce')
+    df["date_time"] = pd.to_datetime(df["date_time"])
 
     # Menambahkan plot
     def get_season(month):
