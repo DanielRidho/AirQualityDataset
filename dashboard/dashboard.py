@@ -47,7 +47,7 @@ def load_data():
         "data/PRSA_Data_Wanshouxigong_20130301-20170228.csv"
     )
 
-    df["date_time"] = pd.to_datetime(df["date_time "])
+    df["date_time"] = pd.to_datetime(df[["date_time "]])
     #df['date_time'] = pd.to_datetime(df[['year', 'month', 'day', 'hour']])
 
     return (
