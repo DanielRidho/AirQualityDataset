@@ -12,6 +12,9 @@ def load_data():
     if not os.path.exists("dashboard/clean_merged_dataset.csv"):
         st.error("File 'clean_merged_dataset.csv' tidak ditemukan.")
 
+     # Tampilkan kolom yang terbaca
+    st.write("Kolom yang tersedia:", df.columns.tolist())
+
     # Membaca dataset
     df = pd.read_csv("dashboard/clean_merged_dataset.csv")
 
