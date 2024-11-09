@@ -4,7 +4,18 @@ Proyek ini bertujuan untuk membangun dashboard interaktif yang memungkinkan peng
 # Noted
 This repository only use to deploy [Streamlit.app](https://airqualitydataset-daniel.streamlit.app/)
 
-If you run in your pc, you should change the directory of read.csv(data) and make the clean merged dataset form url to the correct directory
+If you run in your pc, you should change the directory of read.csv(data) to the correct directory and make the clean merged dataset from usual to url by create the Releases(Github) and then copy the link and change teh code from:
+
+   df = pd.read_csv("clean_merged_dataset.csv")
+
+to:
+
+    url = "https://github.com/DanielRidho/AirQualityDataset/releases/download/v1.0.0/clean_merged_dataset.csv"
+    df = pd.read_csv(url)
+    df.columns = df.columns.str.strip()
+    df['date_time'] = pd.to_datetime(df['date_time'], errors='coerce')
+
+Or, you can search the different by see on my [repository](https://github.com/DanielRidho/AirQualityDataset)
 
 The zip file that I sent in the Dicoding project submission is code that can be run on a local computer.
 
