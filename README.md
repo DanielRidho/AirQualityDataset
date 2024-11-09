@@ -40,7 +40,7 @@ The steps to create your virtual environment from this project is as follows:
 1. Clone this repository
 
    ```
-   git clone https://github.com/anndeviant/analisis-data_airquality.git
+   git clone https://github.com/DanielRidho/AirQualityDataset.git
    ```
 
 2. Move to directory dicoding-airquality/
