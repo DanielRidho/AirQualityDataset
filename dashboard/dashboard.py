@@ -9,20 +9,10 @@ import os
 
 @st.cache_data
 def load_data():
-    if not os.path.exists("dashboard/clean_merged_dataset.csv"):
-        st.error("File 'clean_merged_dataset.csv' tidak ditemukan.")
-
-    # Membaca dataset
-    df = pd.read_csv("dashboard/clean_merged_dataset.csv")
-
-    # Membersihkan nama kolom dari spasi
+    url = "https://github.com/DanielRidho/AirQualityDataset/releases/download/v1.0.0/clean_merged_dataset.csv"
+    df = pd.read_csv(url)
     df.columns = df.columns.str.strip()
-
-    # Periksa apakah kolom 'date_time' ada
-    if 'date_time' in df.columns:
-        df['date_time'] = pd.to_datetime(df['date_time'], errors='coerce')
-    else:
-        st.error("Kolom 'date_time' tidak ditemukan di dataset.")
+    df['date_time'] = pd.to_datetime(df['date_time'], errors='coerce')
 
     df_Aotizhongxin = pd.read_csv(
         "data/PRSA_Data_Aotizhongxin_20130301-20170228.csv"
