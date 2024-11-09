@@ -1,5 +1,5 @@
 # Belajar Analisis Data dengan Python
-Proyek ini bertujuan untuk membuat dashboard interaktif yang menganalisis dan memvisualisasikan data kualitas udara yang memungkinkan pengguna untuk mengeksplorasi tren dan pola pencemaran dengan mudah
+Proyek ini bertujuan untuk membangun dashboard interaktif yang memungkinkan pengguna menganalisis dan memvisualisasikan data kualitas udara, sehingga memudahkan eksplorasi tren serta pola polusi dengan lebih efektif.
 
 # Noted
 This repository only use to deploy [Streamlit.app](https://airqualitydataset-daniel.streamlit.app/)
