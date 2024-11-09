@@ -12,9 +12,6 @@ def load_data():
     if not os.path.exists("dashboard/clean_merged_dataset.csv"):
         st.error("File 'clean_merged_dataset.csv' tidak ditemukan.")
 
-     # Tampilkan kolom yang terbaca
-    st.write("Kolom yang tersedia:", df.columns.tolist())
-
     # Membaca dataset
     df = pd.read_csv("dashboard/clean_merged_dataset.csv")
 
@@ -132,6 +129,8 @@ wilayah_dir = {
 
 if menu == "Home":
     st.title("Air Quality Dataset")
+         # Tampilkan kolom yang terbaca
+    st.write("Kolom yang tersedia:", df.columns.tolist())
     st.markdown(
         """
         By Daniel Ridho Abadi (danielgagg21@gmail.com)\n
