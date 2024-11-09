@@ -129,8 +129,6 @@ wilayah_dir = {
 
 if menu == "Home":
     st.title("Air Quality Dataset")
-         # Tampilkan kolom yang terbaca
-    st.write("Kolom yang tersedia:", df.columns.tolist())
     st.markdown(
         """
         By Daniel Ridho Abadi (danielgagg21@gmail.com)\n
