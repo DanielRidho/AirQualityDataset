@@ -10,6 +10,14 @@ from scipy import stats
 def load_data():
     df = pd.read_csv("dashboard/clean_merged_dataset.csv")
 
+    df.columns = df.columns.str.strip()
+
+    # Pastikan kolom 'date_time' ada sebelum dikonversi
+    if 'date_time' in df.columns:
+        df['date_time'] = pd.to_datetime(df['date_time'], errors='coerce')
+    else:
+        st.error("Kolom 'date_time' tidak ditemukan di dataset.")
+
     df_Aotizhongxin = pd.read_csv(
         "data/PRSA_Data_Aotizhongxin_20130301-20170228.csv"
     )
@@ -47,7 +55,7 @@ def load_data():
         "data/PRSA_Data_Wanshouxigong_20130301-20170228.csv"
     )
 
-    df["date_time"] = pd.to_datetime(df[" date_time"])
+    #df["date_time"] = pd.to_datetime(df["date_time"])
     #df['date_time'] = pd.to_datetime(df[['year', 'month', 'day', 'hour']])
 
     return (
