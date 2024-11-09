@@ -4,6 +4,14 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 import numpy as np
 from scipy import stats
+import os
+
+# Pastikan file ditemukan sebelum membaca
+if not os.path.exists("dashboard/clean_merged_dataset.csv"):
+    st.error("File 'clean_merged_dataset.csv' tidak ditemukan.")
+else:
+    st.write("File ditemukan!")
+
 
 
 @st.cache_data
