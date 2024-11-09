@@ -9,6 +9,7 @@ import os
 
 @st.cache_data
 def load_data():
+    #dataset pada dashboard/clean_merged_dataset.csv tidak terbaca, maka dari itu saya membuat releases. Untuk isi tentu sama saja(olahan dari .ipynb.
     url = "https://github.com/DanielRidho/AirQualityDataset/releases/download/v1.0.0/clean_merged_dataset.csv"
     df = pd.read_csv(url)
     df.columns = df.columns.str.strip()
@@ -167,8 +168,7 @@ elif menu == "Pertanyaan 1":
     )
 
     # Mengonversi kolom date_time menjadi datetime
-    df["date_time"] = pd.to_datetime(df["date_time "])
-    #df['date_time'] = pd.to_datetime(df[['year', 'month', 'day', 'hour']])
+    df["date_time"] = pd.to_datetime(df["date_time"])
 
     # Membuat plot
     yearly_co = df.groupby('year')['CO'].mean().reset_index()
@@ -216,8 +216,7 @@ elif menu == "Pertanyaan 2":
     )
 
     # Mengonversi kolom date_time menjadi datetime
-    df["date_time"] = pd.to_datetime(df["date_time "])
-    #df['date_time'] = pd.to_datetime(df[['year', 'month', 'day', 'hour']])
+    df["date_time"] = pd.to_datetime(df["date_time"])
     
     # Membuat scatter plot
     fig, ax = plt.subplots(figsize=(10, 6))
@@ -256,8 +255,7 @@ elif menu == "Pertanyaan 3":
     )
 
     # Mengonversi kolom date_time menjadi datetime
-    df["date_time"] = pd.to_datetime(df["date_time "])
-    #df['date_time'] = pd.to_datetime(df[['year', 'month', 'day', 'hour']])
+    df["date_time"] = pd.to_datetime(df["date_time"])
 
     # Menambahkan plot
     def get_season(month):
