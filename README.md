@@ -4,7 +4,9 @@ Proyek ini bertujuan untuk membangun dashboard interaktif yang memungkinkan peng
 # Noted
 This repository only use to deploy [Streamlit.app](https://airqualitydataset-daniel.streamlit.app/)
 
-If you run in your pc, you should change the directory of read.csv(data) to the correct directory and make the clean merged dataset from usual to url by create the Releases(Github) and then copy the link and change teh code from:
+If you run in your pc, you should change the directory of read.csv(data) to the correct directory.
+
+If you want to deploy to a streamlit, you should change the directory of read.csv(data) to the correct directory and make the clean merged dataset from usual to url by create the Releases(Github) and then copy the link and change teh code from:
 
    df = pd.read_csv("clean_merged_dataset.csv")
 
