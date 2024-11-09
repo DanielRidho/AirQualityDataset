@@ -4,23 +4,23 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 import numpy as np
 from scipy import stats
-import os
-
-# Pastikan file ditemukan sebelum membaca
-if not os.path.exists("dashboard/clean_merged_dataset.csv"):
-    st.error("File 'clean_merged_dataset.csv' tidak ditemukan.")
-else:
-    st.write("File ditemukan!")
-
-
 
 @st.cache_data
 def load_data():
+    if not os.path.exists("dashboard/clean_merged_dataset.csv"):
+        st.error("File 'clean_merged_dataset.csv' tidak ditemukan.")
+        return None
+
+    # Membaca dataset
     df = pd.read_csv("dashboard/clean_merged_dataset.csv")
 
+    # Tampilkan kolom yang terbaca
+    st.write("Kolom yang tersedia:", df.columns.tolist())
+
+    # Membersihkan nama kolom dari spasi
     df.columns = df.columns.str.strip()
 
-    # Pastikan kolom 'date_time' ada sebelum dikonversi
+    # Periksa apakah kolom 'date_time' ada
     if 'date_time' in df.columns:
         df['date_time'] = pd.to_datetime(df['date_time'], errors='coerce')
     else:
