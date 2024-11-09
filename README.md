@@ -2,9 +2,9 @@
 Proyek ini bertujuan untuk membuat dashboard interaktif yang menganalisis dan memvisualisasikan data kualitas udara yang memungkinkan pengguna untuk mengeksplorasi tren dan pola pencemaran dengan mudah
 
 # Noted
-This repository only use to deploy [Streamlit.app](https://dicoding-airquality-annas-sovianto.streamlit.app/)
+This repository only use to deploy [Streamlit.app](https://airqualitydataset-daniel.streamlit.app/)
 
-If you run in your pc, you should change the directory of read.csv(data)
+If you run in your pc, you should change the directory of read.csv(data) and make the clean merged dataset form url to the correct directory
 
 The zip file that I sent in the Dicoding project submission is code that can be run on a local computer.
 
