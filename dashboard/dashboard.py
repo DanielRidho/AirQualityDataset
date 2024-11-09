@@ -48,7 +48,7 @@ def load_data():
     )
 
     #df["date_time"] = pd.to_datetime(df["date_time"])
-    df["date_time"] = pd.to_datetime(df["date_time"])
+    df['date_time'] = pd.to_datetime(df[['year', 'month', 'day', 'hour']])
 
     return (
         df,
@@ -163,7 +163,8 @@ elif menu == "Pertanyaan 1":
     )
 
     # Mengonversi kolom date_time menjadi datetime
-    df["date_time"] = pd.to_datetime(df["date_time"])
+    #df["date_time"] = pd.to_datetime(df["date_time"])
+    df['date_time'] = pd.to_datetime(df[['year', 'month', 'day', 'hour']])
 
     # Membuat plot
     yearly_co = df.groupby('year')['CO'].mean().reset_index()
@@ -211,7 +212,8 @@ elif menu == "Pertanyaan 2":
     )
 
     # Mengonversi kolom date_time menjadi datetime
-    df["date_time"] = pd.to_datetime(df["date_time"])
+   #df["date_time"] = pd.to_datetime(df["date_time"])
+    df['date_time'] = pd.to_datetime(df[['year', 'month', 'day', 'hour']])
     
     # Membuat scatter plot
     fig, ax = plt.subplots(figsize=(10, 6))
@@ -250,7 +252,8 @@ elif menu == "Pertanyaan 3":
     )
 
     # Mengonversi kolom date_time menjadi datetime
-    df["date_time"] = pd.to_datetime(df["date_time"])
+   # df["date_time"] = pd.to_datetime(df["date_time"])
+    df['date_time'] = pd.to_datetime(df[['year', 'month', 'day', 'hour']])
 
     # Menambahkan plot
     def get_season(month):
